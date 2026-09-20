@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mani0115.github.io/manikumar/sitemap.xml
