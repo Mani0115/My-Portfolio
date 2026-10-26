@@ -3,7 +3,52 @@
  * Improves loading and playback performance of video reels
  */
 
+function generateVideoReelCards(fileIds, containerSelector = '#videosSectionBlock .reel-grid-vertical-9-16') {
+  const container = document.querySelector(containerSelector);
+  if (!container || !Array.isArray(fileIds)) return;
+
+  container.innerHTML = '';
+
+  fileIds.forEach((fileId) => {
+    const cleanFileId = String(fileId).trim();
+    if (!cleanFileId) return;
+
+    const card = document.createElement('div');
+    card.className = 'reel-card-vertical-9-16';
+
+    const posterUrl = `https://drive.google.com/thumbnail?id=${cleanFileId}&sz=w400`;
+    const driveEmbedUrl = `https://drive.google.com/uc?export=download&id=${cleanFileId}`;
+
+    card.setAttribute('data-poster', posterUrl);
+    card.setAttribute('data-drive-embed', driveEmbedUrl);
+
+    const video = document.createElement('video');
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('muted', 'true');
+    video.setAttribute('loop', 'true');
+
+    const playButton = document.createElement('div');
+    playButton.className = 'reel-center-play-button';
+    playButton.innerHTML = '<i class="bi bi-play-fill"></i>';
+
+    card.appendChild(video);
+    card.appendChild(playButton);
+    container.appendChild(card);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+  const googleDriveVideoIds = [
+    // Add Google Drive file IDs here, for example:
+    // '1AbCdEfGhIjKlMnOpQrStUvWxYz',
+    // '2XyZpQmNnLsKjHfGdSaCwErT',
+  ];
+
+  generateVideoReelCards(googleDriveVideoIds, '#videosSectionBlock .reel-grid-vertical-9-16');
+
   // Optimize video reels
   optimizeVideoReels();
   setupLazyVideoLoading();
