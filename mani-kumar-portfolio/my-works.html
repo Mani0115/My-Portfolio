@@ -89,6 +89,136 @@
       color: #dc3545;
       text-align: center;
     }
+
+    @media (max-width: 1199.98px) {
+      .hero-main-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+      }
+      .portfolio-filter-bar {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .header-wrapper {
+        top: 0.75rem;
+        padding: 0 0.75rem;
+      }
+
+      .navbar-pill-container {
+        padding: 0.55rem 0.8rem 0.55rem 1rem;
+      }
+
+      .nav-links-desktop {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: inline-flex;
+      }
+
+      .hero-section {
+        padding-top: 7.5rem;
+      }
+
+      .mk-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .work-section-block .row.g-4 {
+        --bs-gutter-x: 1rem;
+      }
+
+      .reel-grid-vertical-9-16 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .brand-name {
+        font-size: 0.7rem;
+      }
+
+      .brand-tagline {
+        letter-spacing: 0.04em;
+      }
+
+      .hero-main-title {
+        font-size: clamp(2.1rem, 8vw, 3rem);
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .portfolio-filter-bar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 0.35rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .portfolio-filter-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+        flex: 0 0 auto;
+      }
+
+      .reel-grid-vertical-9-16 {
+        grid-template-columns: 1fr;
+      }
+
+      .work-showcase-card {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .header-wrapper {
+        padding: 0 0.5rem;
+      }
+
+      .navbar-pill-container {
+        gap: 0.5rem;
+      }
+
+      .brand-logo {
+        min-width: 0;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .mobile-menu-drawer {
+        left: 0.6rem;
+        right: 0.6rem;
+        top: 4.5rem;
+        padding: 1rem;
+      }
+
+      .hero-section {
+        padding-top: 6.5rem;
+      }
+
+      .hero-main-title {
+        letter-spacing: -0.04em;
+      }
+
+      .work-card-title {
+        font-size: 1rem;
+      }
+
+      .work-card-footer {
+        font-size: 0.82rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -125,7 +255,7 @@
 
       <!-- Nav CTA & Mobile Toggle -->
       <div class="d-flex align-items-center gap-2">
-        <a href="mani-kumar-portfolio/assets/Resume.docx" class="nav-cta-btn d-none d-lg-inline-flex" id="navCtaBtn">
+        <a href="assets/Resume.docx" class="nav-cta-btn d-none d-lg-inline-flex" id="navCtaBtn">
           <span>My Resume</span>
           <i class="bi bi-arrow-right"></i>
         </a>
@@ -746,6 +876,7 @@
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 
   <!-- Video Optimization Script -->
   <script src="js/video-optimization.js"></script>
